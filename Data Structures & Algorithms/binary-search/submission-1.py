@@ -1,0 +1,23 @@
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        #input array is sorted
+        left = 0
+        right = len(nums) - 1 
+
+        while left <= right: 
+
+            mid = left + ((right-left)//2) 
+
+            if nums[mid] > target:
+                right = mid - 1
+
+            elif nums[mid] < target: 
+                left = mid + 1
+            else:
+                return mid 
+        
+        return -1 
+
+        #Time Complexity: O(logn)
+        #Space Complexity: O(1) 
+        
